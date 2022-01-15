@@ -4,8 +4,8 @@ import logging
 import epdconfig
 
 # Display resolution
-EPD_WIDTH       = 480
-EPD_HEIGHT      = 800
+EPD_WIDTH       = 800
+EPD_HEIGHT      = 480
 
 logger = logging.getLogger(__name__)
 
