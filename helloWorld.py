@@ -3,8 +3,7 @@ import time
 import epd7in5_V2
 import logging
 import os
-picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__>
-
+picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
 epd = epd7in5_V2.EPD()
 epd.init()
 
