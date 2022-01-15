@@ -25,7 +25,7 @@ Hbuf = epd.getbuffer(Himage)
 epd.display(Hbuf)
 
 # Set display in deep sleep
-time.sleep(10)
+time.sleep(3)
 #Vertical image
 
 Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
@@ -35,18 +35,18 @@ draw.text((0, 10), "whats poppin?", fill=0)
 draw.text((0, 20), "brand new whip just hopped in", fill=0)
 Lbuf = epd.getbuffer(Limage)
 epd.display(Lbuf)
-time.sleep(5)
+time.sleep(3)
 
 
 
 
 Pimage = Image.open(os.path.join(picdir, 'panda.bmp'))
 epd.display(epd.getbuffer(Pimage))
-time.sleep(2)
+time.sleep(5)
 
 logging.info("4.read bmp file on window")
 Himage2 = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-bmp = Image.open(os.path.join(picdir, '100x100.bmp'))
+bmp = Image.open(os.path.join(picdir, 'newspaperLayout.bmp'))
 Himage2.paste(bmp, (50,10))
 epd.display(epd.getbuffer(Himage2))
 time.sleep(10)
