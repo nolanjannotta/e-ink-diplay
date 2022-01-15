@@ -35,4 +35,17 @@ draw.text((0, 10), "whats poppin?", fill=0)
 draw.text((0, 20), "brand new whip just hopped in", fill=0)
 Lbuf = epd.getbuffer(Limage)
 epd.display(Lbuf)
+time.sleep(5)
+
+Himage = Image.open(os.path.join(picdir, 'panda.bmp'))
+epd.display(epd.getbuffer(Himage))
+time.sleep(2)
+
+logging.info("4.read bmp file on window")
+Himage2 = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+bmp = Image.open(os.path.join(picdir, '100x100.bmp'))
+Himage2.paste(bmp, (50,10))
+epd.display(epd.getbuffer(Himage2))
+time.sleep(10)
+
 epd.sleep()
