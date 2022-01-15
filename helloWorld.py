@@ -3,7 +3,7 @@ import time
 import epd7in5_V2
 import logging
 import os
-picdir = "/home/pi/eInk/e-ink-diplay/pic"
+picdir = "/home/pi/eInk/e-ink-display/pic"
 epd = epd7in5_V2.EPD()
 epd.init()
 
