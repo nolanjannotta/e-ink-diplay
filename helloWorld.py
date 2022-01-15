@@ -3,7 +3,7 @@ import time
 import epd7in5_V2
 import logging
 import os
-picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
+picdir = "/home/pi/eInk/e-ink-diplay/pic"
 epd = epd7in5_V2.EPD()
 epd.init()
 
@@ -37,8 +37,11 @@ Lbuf = epd.getbuffer(Limage)
 epd.display(Lbuf)
 time.sleep(5)
 
-Himage = Image.open(os.path.join(picdir, 'panda.bmp'))
-epd.display(epd.getbuffer(Himage))
+
+
+
+Pimage = Image.open(picdir)
+epd.display(epd.getbuffer(Pimage))
 time.sleep(2)
 
 logging.info("4.read bmp file on window")
