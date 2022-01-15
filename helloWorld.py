@@ -40,7 +40,7 @@ time.sleep(5)
 
 
 
-Pimage = Image.open(picdir)
+Pimage = Image.open(os.path.join(picdir, 'panda.bmp'))
 epd.display(epd.getbuffer(Pimage))
 time.sleep(2)
 
