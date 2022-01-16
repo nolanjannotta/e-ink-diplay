@@ -40,13 +40,13 @@ today = date.today()
 monthDate = today.strftime("%B %d, %Y")
 day = today.strftime('%A')
 
-temp = f"Temp: {currentWeather.temp()} degrees fahrenheit"
+temp = f"{currentWeather.temp()} degrees fahrenheit"
 
 
 monthFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Bold.ttf'),size=75)
 dayFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Regular.ttf'),size=60)
 
-weatherFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Regular.ttf'),size=20)
+weatherFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Regular.ttf'),size=30)
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
