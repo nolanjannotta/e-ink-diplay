@@ -1,4 +1,4 @@
-from PIL import Image, ImageFont, ImageDraw
+from PIL import Image,ImageDraw,ImageFont
 from datetime import date
 import time
 import epd7in5_V2
@@ -33,7 +33,7 @@ epd.Clear()
 #Vertical image
 today = date.today()
 date = today.strftime("%B %d, %Y")
-font = ImageFont.truetype(os.path.join(picdir, 'newspaper.bmp'),size=24)
+font = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Bold.ttf'),size=24)
 
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
