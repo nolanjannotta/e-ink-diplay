@@ -32,7 +32,7 @@ epd.Clear()
 # Set display in deep sleep
 # time.sleep(3)
 #Vertical image
-dt = datetime(tzinfo=ZoneInfo("America/Los_Angeles"))
+dt = datetime(date, tzinfo=ZoneInfo("America/Los_Angeles"))
 _date = dt.date()
 today = _date.today()
 monthDate = today.strftime("%B %d, %Y")
