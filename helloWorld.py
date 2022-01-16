@@ -13,6 +13,7 @@ monthFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),si
 dayFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=70)
 weatherFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=40)
 conditionFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=30)
+timeFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=90)
 
 sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=27)
 epd = epd7in5_V2.EPD()
@@ -57,7 +58,7 @@ def draw():
 
     draw.rectangle((0, 302, 478, 600), outline = 0, width=2)
 
-    #draw.text((250, 252), time, fill = 0, font=sunFont)
+    draw.text((10, 400), time, fill = 0, font=sunFont)
     
     epd.display(epd.getbuffer(Himage))
     # time.sleep(2)
