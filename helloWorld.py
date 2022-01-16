@@ -43,10 +43,12 @@ day = today.strftime('%A')
 temp = f"{currentWeather.temp()} °F"
 
 
+
 monthFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Bold.ttf'),size=75)
 dayFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Regular.ttf'),size=60)
-
 weatherFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Regular.ttf'),size=40)
+
+
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
@@ -62,11 +64,12 @@ draw.text((10, 120), day, fill = 0, font=dayFont)
 # draw.line((165, 50, 165, 100), fill = 0)
 # draw.line((140, 75, 190, 75), fill = 0)
 # draw.arc((140, 50, 190, 100), 0, 360, fill = 0)
-draw.rectangle((0, 202, 238, 300), outline = 0)
+draw.rectangle((0, 202, 238, 300), outline = 0, width=2)
 
-draw.text((10, 220), temp, fill = 0, font=weatherFont)
+draw.text((10, 215), temp, fill = 0, font=weatherFont)
+draw.text((10, 230), currentWeather.description(), fill = 0, font=weatherFont)
 
-draw.rectangle((240, 202, 478, 300), outline = 0)
+draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
 # draw.chord((200, 50, 250, 100), 0, 360, fill = 0)
 epd.display(epd.getbuffer(Himage))
 # time.sleep(2)
