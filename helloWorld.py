@@ -35,8 +35,6 @@ epd.Clear()
 #Vertical image
 
 currentWeather = weather.Weather()
-print(currentWeather.sunset())
-print(currentWeather.sunrise())
 
 today = date.today()
 monthDate = today.strftime("%B %d, %Y")
@@ -54,6 +52,7 @@ dayFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size
 weatherFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=40)
 conditionFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=30)
 
+sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=25)
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
@@ -72,8 +71,8 @@ draw.text((10, 248), currentWeather.description(), fill = 0, font=conditionFont)
 
 draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
 
-draw.text((250, 248), sunrise, fill = 0, font=conditionFont)
-draw.text((250, 205), sunset, fill = 0, font=conditionFont)
+draw.text((250, 248), sunrise, fill = 0, font=sunFont)
+draw.text((250, 205), sunset, fill = 0, font=sunFont)
 
 
 epd.display(epd.getbuffer(Himage))
