@@ -29,13 +29,13 @@ time.sleep(3)
 #Vertical image
 
 logging.info("1.Drawing on the Horizontal image...")
-Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
-draw.text((10, 0), 'hello world', fill = 0)
-draw.text((10, 20), '7.5inch e-Paper', fill = 0)
-draw.line((20, 50, 70, 100), fill = 0)
-draw.line((70, 50, 20, 100), fill = 0)
-# draw.rectangle((20, 50, 70, 100), outline = 0)
+# draw.text((10, 0), 'hello world', fill = 0)
+# draw.text((10, 20), '7.5inch e-Paper', fill = 0)
+# draw.line((20, 50, 70, 100), fill = 0)
+# draw.line((70, 50, 20, 100), fill = 0)
+draw.rectangle((0, 50, 70, 100), outline = 0)
 # draw.line((165, 50, 165, 100), fill = 0)
 # draw.line((140, 75, 190, 75), fill = 0)
 # draw.arc((140, 50, 190, 100), 0, 360, fill = 0)
