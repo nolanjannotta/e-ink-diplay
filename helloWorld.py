@@ -47,7 +47,7 @@ temp = f"{currentWeather.temp()} °F"
 monthFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=75)
 dayFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=70)
 weatherFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=40)
-
+conditionFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=30)
 
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
@@ -62,8 +62,8 @@ draw.text((10, 110), day, fill = 0, font=dayFont)
 
 draw.rectangle((0, 202, 238, 300), outline = 0, width=2)
 
-draw.text((10, 215), temp, fill = 0, font=weatherFont)
-draw.text((10, 255), currentWeather.description(), fill = 0, font=weatherFont)
+draw.text((10, 205), temp, fill = 0, font=weatherFont)
+draw.text((10, 245), currentWeather.description(), fill = 0, font=conditionFont)
 
 draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
 # draw.chord((200, 50, 250, 100), 0, 360, fill = 0)
