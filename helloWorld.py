@@ -5,6 +5,7 @@ import time
 import epd7in5_V2
 import logging
 import os
+import weather
 
 picdir = "/home/pi/eInk/e-ink-display/pic"
 fontdir = "/home/pi/eInk/e-ink-display/font"
@@ -33,14 +34,19 @@ epd.Clear()
 # time.sleep(3)
 #Vertical image
 
+currentWeather = weather.Weather()
 
 today = date.today()
 monthDate = today.strftime("%B %d, %Y")
 day = today.strftime('%A')
 
+temp = f"Temp: {currentWeather.temp}"
+
+
 monthFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Bold.ttf'),size=75)
 dayFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Regular.ttf'),size=60)
 
+weatherFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Regular.ttf'),size=20)
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
@@ -57,6 +63,9 @@ draw.text((10, 120), day, fill = 0, font=dayFont)
 # draw.line((140, 75, 190, 75), fill = 0)
 # draw.arc((140, 50, 190, 100), 0, 360, fill = 0)
 draw.rectangle((0, 202, 238, 300), outline = 0)
+
+draw.text((10, 220), temp, fill = 0, font=weatherFont)
+
 draw.rectangle((240, 202, 478, 300), outline = 0)
 # draw.chord((200, 50, 250, 100), 0, 360, fill = 0)
 epd.display(epd.getbuffer(Himage))
