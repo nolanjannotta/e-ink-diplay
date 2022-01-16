@@ -23,12 +23,13 @@ class Timer:
     def __init__(self):
         self.timer = self.now()
     def now(self):
-        return time.time().trunc()
+        return int(time.time())
     def nextavailable(self):
-        return time.time().trunc() + 60
+        return int(time.time()) + 60
     def checkUpdate(self):
         if(self.timer >= self.nextavailable()):
             self.timer = self.now()
+            return True
 
 def draw():
     
@@ -116,8 +117,11 @@ def main():
     # clear the screen
 
     while True:
-        if timer.
+        if timer.checkUpdate:
+            draw()
+
         time.sleep(1)
+
         
         # schedule.every(1).minutes.do(func)
         # draw()
