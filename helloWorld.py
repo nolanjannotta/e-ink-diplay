@@ -37,6 +37,8 @@ date = today.strftime("%B %d, %Y")
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
+font = draw.getfont()
+print(font)
 # draw.text((10, 0), 'hello world', fill = 0)
 # draw.text((10, 20), '7.5inch e-Paper', fill = 0)
 # draw.line((20, 50, 70, 100), fill = 0)
