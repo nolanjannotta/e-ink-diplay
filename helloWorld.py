@@ -26,10 +26,12 @@ class Timer:
         return int(time.time())
     def nextavailable(self):
         return int(time.time()) + 60
+
     def checkUpdate(self):
         if(self.now >= self.nextavailable()):
             self.timer = self.now()
             return True
+        pass
 
 def draw():
     
