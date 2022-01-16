@@ -19,19 +19,19 @@ timeFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size
 sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=27)
 epd = epd7in5_V2.EPD()
 
-class Timer:
-    def __init__(self):
-        self.timer = self.now()
-    def now(self):
-        return int(time.time())
-    def nextavailable(self):
-        return self.timer + 60
+# class Timer:
+#     def __init__(self):
+#         self.timer = self.now()
+#     def now(self):
+#         return int(time.time())
+#     def nextavailable(self):
+#         return self.timer + 60
 
-    def checkUpdate(self):
-        if(self.now >= self.nextavailable()):
-            self.timer = self.now()
-            return True
-        pass
+#     def checkUpdate(self):
+#         if(self.now >= self.nextavailable()):
+#             self.timer = self.now()
+#             return True
+#         pass
 
 def draw():
     
@@ -78,8 +78,7 @@ def draw():
     draw.rectangle((0, 302, 478, 520), outline = 0, width=2)
     draw.text((10, 340), time, fill = 0, font=timeFont)
 
-    epd.init()  
-    epd.Clear()
+
     epd.display(epd.getbuffer(Himage))
     # time.sleep(2)
 
@@ -108,29 +107,12 @@ def draw():
 
     epd.sleep()
 
-timer = Timer()
+
 def main():
-    
+    epd.init()  
+    epd.Clear()
     
     draw()
-
-    # schedule.every(1).minutes.do(draw)
-
-    # clear the screen
-
-    while True:
-        if timer.checkUpdate:
-            draw()
-
-        time.sleep(1)
-
-        
-        # schedule.every(1).minutes.do(func)
-        # draw()
-        # time.sleep(60)
-        # epd.init()  
-        # epd.Clear()
-
 
         
 
