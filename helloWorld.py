@@ -93,7 +93,7 @@ def main():
         epd.Clear()
 
         draw()
-        time.sleep(60)
+        time.sleep(20)
 
 
     # Horizontal image
