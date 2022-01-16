@@ -27,7 +27,7 @@ class Timer:
     def nextavailable(self):
         return int(time.time()) + 60
     def checkUpdate(self):
-        if(self.timer >= self.nextavailable()):
+        if(self.now >= self.nextavailable()):
             self.timer = self.now()
             return True
 
