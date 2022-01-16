@@ -53,20 +53,22 @@ logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
 
-
+# draws day and date rectangle
 draw.rectangle((0, 0, 478, 200), outline = 0, width=2)
 draw.text((10, 17), day, fill = 0, font=monthFont)
-
 draw.text((10, 117), monthDate, fill = 0, font=dayFont)
 
-
+# draws weather rectangle
 draw.rectangle((0, 202, 238, 300), outline = 0, width=2)
-
 draw.text((10, 205), temp, fill = 0, font=weatherFont)
 draw.text((10, 248), currentWeather.description(), fill = 0, font=conditionFont)
 
+
+
 draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
-# draw.chord((200, 50, 250, 100), 0, 360, fill = 0)
+
+draw.text((250, 205), currentWeather.sunset(), fill = 0, font=weatherFont)
+draw.text((250, 248), currentWeather.sunrise(), fill = 0, font=conditionFont)
 
 epd.display(epd.getbuffer(Himage))
 # time.sleep(2)

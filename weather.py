@@ -23,6 +23,10 @@ class Weather:
 
     def description(self): 
         return self.weather.detailed_status
+    def sunset(self):
+        return self.weather.sunset_time
+    def sunrise(self):
+        return self.weather.sunrise_time
 
     def forecast(self):
         # forecast = mgr.forecast_at_place('Milan,IT', 'daily')
