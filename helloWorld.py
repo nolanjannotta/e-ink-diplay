@@ -44,9 +44,9 @@ temp = f"{currentWeather.temp()} °F"
 
 
 
-monthFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Bold.ttf'),size=65)
-dayFont = ImageFont.truetype(os.path.join(fontdir, 'ostrich-regular.ttf'),size=60)
-weatherFont = ImageFont.truetype(os.path.join(fontdir, 'ostrich-regular.ttf'),size=40)
+monthFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=65)
+dayFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=60)
+weatherFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=40)
 
 
 logging.info("1.Drawing on the Horizontal image...")
