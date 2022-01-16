@@ -63,7 +63,7 @@ def draw():
     draw.rectangle((0, 302, 478, 520), outline = 0, width=2)
     draw.text((10, 340), time, fill = 0, font=timeFont)
 
-
+    epd.init()  
     epd.Clear()
     epd.display(epd.getbuffer(Himage))
     # time.sleep(2)
@@ -95,7 +95,7 @@ def draw():
 
 def main():
     
-    epd.init()
+    
     draw()
 
     schedule.every(1).minutes.do(draw)
