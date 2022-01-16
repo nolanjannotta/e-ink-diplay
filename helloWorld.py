@@ -4,8 +4,9 @@ import time
 import epd7in5_V2
 import logging
 import os
-picdir = "/home/pi/eInk/e-ink-display/pic"
 
+picdir = "/home/pi/eInk/e-ink-display/pic"
+fontdir = "/home/pi/eInk/e-ink-display/font"
 
 epd = epd7in5_V2.EPD()
 epd.init()
@@ -32,7 +33,7 @@ epd.Clear()
 #Vertical image
 today = date.today()
 date = today.strftime("%B %d, %Y")
-# font = ImageFont.truetype(size=24)
+font = ImageFont.truetype(os.path.join(picdir, 'newspaper.bmp'),size=24)
 
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
@@ -44,7 +45,7 @@ print(font.size)
 # draw.line((20, 50, 70, 100), fill = 0)
 # draw.line((70, 50, 20, 100), fill = 0)
 draw.rectangle((0, 0, 478, 200), outline = 0, width=2)
-draw.text((10, 100), date, fill = 0)
+draw.text((10, 100), date, fill = 0, font=font)
 # draw.line((165, 50, 165, 100), fill = 0)
 # draw.line((140, 75, 190, 75), fill = 0)
 # draw.arc((140, 50, 190, 100), 0, 360, fill = 0)
