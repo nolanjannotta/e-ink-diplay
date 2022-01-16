@@ -62,7 +62,7 @@ def main():
     # draws day and date rectangle
     draw.rectangle((0, 0, 478, 200), outline = 0, width=2)
     draw.text((10, 17), day, fill = 0, font=monthFont)
-    draw.text((10, 110), monthDate, fill = 0, font=dayFont)
+    draw.text((10, 107), monthDate, fill = 0, font=dayFont)
 
     # draws weather rectangle
     draw.rectangle((0, 202, 238, 300), outline = 0, width=2)
