@@ -80,7 +80,7 @@ def draw():
     # epd.display(epd.getbuffer(Himage2))
     # time.sleep(10)
 
-    epd.sleep()
+    # epd.sleep()
 
 def main():
     
@@ -89,11 +89,13 @@ def main():
     # clear the screen
 
     while True:
+        draw()
+        time.sleep(20)
 
         epd.Clear()
 
-        draw()
-        time.sleep(20)
+
+        
 
 
     # Horizontal image
