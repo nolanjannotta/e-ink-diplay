@@ -63,7 +63,7 @@ draw.text((10, 110), day, fill = 0, font=dayFont)
 draw.rectangle((0, 202, 238, 300), outline = 0, width=2)
 
 draw.text((10, 205), temp, fill = 0, font=weatherFont)
-draw.text((10, 245), currentWeather.description(), fill = 0, font=conditionFont)
+draw.text((10, 248), currentWeather.description(), fill = 0, font=conditionFont)
 
 draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
 # draw.chord((200, 50, 250, 100), 0, 360, fill = 0)
