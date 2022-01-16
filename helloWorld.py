@@ -33,7 +33,7 @@ epd.Clear()
 #Vertical image
 today = date.today()
 date = today.strftime("%B %d, %Y")
-font = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Bold.ttf'),size=24)
+font = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Bold.ttf'),size=64)
 
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
