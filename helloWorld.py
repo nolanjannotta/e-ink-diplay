@@ -44,9 +44,9 @@ temp = f"{currentWeather.temp()} °F"
 
 
 
-monthFont = ImageFont.truetype(os.path.join(fontdir, 'LinLibertine-Bold.ttf'),size=65)
-dayFont = ImageFont.truetype(os.path.join(fontdir, 'LinLibertine-Regular.ttf'),size=60)
-weatherFont = ImageFont.truetype(os.path.join(fontdir, 'LinLibertine-Regular.ttf'),size=40)
+monthFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Bold.ttf'),size=65)
+dayFont = ImageFont.truetype(os.path.join(fontdir, 'ostrich-regular.ttf'),size=60)
+weatherFont = ImageFont.truetype(os.path.join(fontdir, 'ostrich-regular.ttf'),size=40)
 
 
 logging.info("1.Drawing on the Horizontal image...")
@@ -66,6 +66,7 @@ draw.text((10, 255), currentWeather.description(), fill = 0, font=weatherFont)
 
 draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
 # draw.chord((200, 50, 250, 100), 0, 360, fill = 0)
+
 epd.display(epd.getbuffer(Himage))
 # time.sleep(2)
 
