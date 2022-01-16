@@ -1,5 +1,6 @@
 from PIL import Image,ImageDraw,ImageFont
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 import time
 import epd7in5_V2
 import logging
@@ -31,7 +32,9 @@ epd.Clear()
 # Set display in deep sleep
 # time.sleep(3)
 #Vertical image
-today = date.today()
+dt = datetime(tzinfo=ZoneInfo("America/Los_Angeles"))
+_date = dt.date()
+today = _date.today()
 monthDate = today.strftime("%B %d, %Y")
 day = today.strftime('%A')
 
