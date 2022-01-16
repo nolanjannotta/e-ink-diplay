@@ -52,7 +52,7 @@ dayFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size
 weatherFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=40)
 conditionFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=30)
 
-sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=25)
+sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=27)
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
