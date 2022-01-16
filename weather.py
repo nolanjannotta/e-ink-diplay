@@ -9,7 +9,7 @@ import os
 
 class Weather:
     def __init__(self):
-        api_key = os.environ.get('WEATHER_API')
+        api_key = os.environ.get('WEATHER_API') 
    
         owm = OWM(api_key)
         mgr = owm.weather_manager()

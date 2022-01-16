@@ -17,6 +17,9 @@ conditionFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf')
 sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=27)
 epd = epd7in5_V2.EPD()
 def draw():
+
+    raw_time = datetime.now().time()
+    time = raw_time.strftime("%I:%M %p")
     currentWeather = weather.Weather()
 
     today = date.today()
@@ -52,8 +55,10 @@ def draw():
     draw.text((250, 211), sunrise, fill = 0, font=sunFont)
     draw.text((250, 252), sunset, fill = 0, font=sunFont)
 
+    draw.rectangle((0, 302, 478, 300), outline = 0, width=2)
 
-
+    #draw.text((250, 252), time, fill = 0, font=sunFont)
+    
     epd.display(epd.getbuffer(Himage))
     # time.sleep(2)
 
