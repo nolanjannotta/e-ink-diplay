@@ -71,8 +71,9 @@ draw.text((10, 248), currentWeather.description(), fill = 0, font=conditionFont)
 
 draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
 
-draw.text((250, 252), sunrise, fill = 0, font=sunFont)
-draw.text((250, 209), sunset, fill = 0, font=sunFont)
+draw.text((250, 209), sunrise, fill = 0, font=sunFont)
+draw.text((250, 252), sunset, fill = 0, font=sunFont)
+
 
 
 epd.display(epd.getbuffer(Himage))
