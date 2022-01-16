@@ -6,6 +6,7 @@ import os
 
 
 
+
 class Weather:
     def __init__(self):
         api_key = os.environ.get('WEATHER_API')

@@ -40,7 +40,7 @@ today = date.today()
 monthDate = today.strftime("%B %d, %Y")
 day = today.strftime('%A')
 
-temp = f"Temp: {currentWeather.temp}"
+temp = f"Temp: {currentWeather.temp()} degrees fahrenheit"
 
 
 monthFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Bold.ttf'),size=75)
