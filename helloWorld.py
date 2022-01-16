@@ -18,6 +18,18 @@ timeFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size
 
 sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=27)
 epd = epd7in5_V2.EPD()
+
+class Timer:
+    def __init__(self):
+        self.timer = self.now()
+    def now(self):
+        return time.time().trunc()
+    def nextavailable(self):
+        return time.time().trunc() + 60
+    def checkUpdate(self):
+        if(self.timer >= self.nextavailable()):
+            self.timer = self.now()
+
 def draw():
     
 
@@ -93,17 +105,18 @@ def draw():
 
     epd.sleep()
 
+timer = Timer()
 def main():
     
     
     draw()
 
-    schedule.every(1).minutes.do(draw)
+    # schedule.every(1).minutes.do(draw)
 
     # clear the screen
 
     while True:
-        schedule.run_pending()
+        if timer.
         time.sleep(1)
         
         # schedule.every(1).minutes.do(func)

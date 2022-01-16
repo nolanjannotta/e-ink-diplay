@@ -1,6 +1,31 @@
 from datetime import datetime
+import time
 
-raw_time = datetime.now().time()
-time = raw_time.strftime("%I:%M %p")
+class Timer:
+    def __init__(self):
+        self.timer = self.now()
+    def now(self):
+        return time.time().trunc()
+    def nextavailable(self):
+        return time.time().trunc() + 60
+    def checkUpdate(self):
+        if(self.timer >= self.nextavailable()):
+            self.timer = self.now()
+            return True
 
-print(time)
+        
+
+timer = Timer()
+
+def func():
+    print("hello")
+
+def main():
+
+    func()
+    while True:
+        if timer.checkUpdate:
+            func()
+
+        time.sleep(4)
+
