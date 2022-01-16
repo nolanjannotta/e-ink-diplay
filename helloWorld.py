@@ -57,7 +57,7 @@ def draw():
     draw.text((250, 252), sunset, fill = 0, font=sunFont)
 
     # draw clock
-    draw.rectangle((0, 302, 478, 600), outline = 0, width=2)
+    draw.rectangle((0, 302, 478, 520), outline = 0, width=2)
     draw.text((10, 320), time, fill = 0, font=timeFont)
     
     epd.display(epd.getbuffer(Himage))
