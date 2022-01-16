@@ -96,6 +96,7 @@ def draw():
 def main():
     
     epd.init()
+    draw()
 
     schedule.every(1).minutes.do(draw)
 
