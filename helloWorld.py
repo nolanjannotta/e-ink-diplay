@@ -80,7 +80,7 @@ def draw():
     # epd.display(epd.getbuffer(Himage2))
     # time.sleep(10)
 
-    # epd.sleep()
+    epd.sleep()
 
 def main():
     
@@ -90,8 +90,8 @@ def main():
 
     while True:
         draw()
-        time.sleep(20)
-
+        time.sleep(60)
+        epd.init()  
         epd.Clear()
 
 
