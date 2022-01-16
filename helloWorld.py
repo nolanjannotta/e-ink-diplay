@@ -35,6 +35,8 @@ epd.Clear()
 #Vertical image
 
 currentWeather = weather.Weather()
+print(currentWeather.sunset())
+print(currentWeather.sunrise())
 
 today = date.today()
 monthDate = today.strftime("%B %d, %Y")
@@ -67,8 +69,8 @@ draw.text((10, 248), currentWeather.description(), fill = 0, font=conditionFont)
 
 draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
 
-draw.text((250, 205), currentWeather.sunset(), fill = 0, font=weatherFont)
-draw.text((250, 248), currentWeather.sunrise(), fill = 0, font=conditionFont)
+# draw.text((250, 205), currentWeather.sunset(), fill = 0, font=weatherFont)
+# draw.text((250, 248), currentWeather.sunrise(), fill = 0, font=conditionFont)
 
 epd.display(epd.getbuffer(Himage))
 # time.sleep(2)
