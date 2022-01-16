@@ -1,5 +1,6 @@
 from PIL import Image,ImageDraw,ImageFont
 from datetime import date
+import time
 import epd7in5_V2
 import logging
 import os
@@ -24,7 +25,7 @@ def main():
     epd.Clear()
 
 
-    Horizontal image
+    # Horizontal image
     Himage = Image.new('1', (epd7in5_V2.EPD_WIDTH, epd7in5_V2.EPD_HEIGHT), 255)
     draw = ImageDraw.Draw(Himage)
     draw.text((0, 0), "hello world", fill=0)
@@ -37,7 +38,7 @@ def main():
     # Display buffer
     epd.display(Hbuf)
 
-    Set display in deep sleep
+    # Set display in deep sleep
     time.sleep(3)
     #Vertical image
 
