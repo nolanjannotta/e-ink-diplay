@@ -46,7 +46,7 @@ temp = f"{currentWeather.temp()} °F"
 
 monthFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=75)
 dayFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=70)
-weatherFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Bold.ttf'),size=40)
+weatherFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=40)
 
 
 logging.info("1.Drawing on the Horizontal image...")
