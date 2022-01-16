@@ -42,29 +42,29 @@ draw.arc((140, 50, 190, 100), 0, 360, fill = 0)
 draw.rectangle((80, 50, 130, 100), fill = 0)
 draw.chord((200, 50, 250, 100), 0, 360, fill = 0)
 epd.display(epd.getbuffer(Himage))
-time.sleep(2)
+# time.sleep(2)
 
-Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-draw = ImageDraw.Draw(Limage)
-draw.text((0, 0), "oi cunt", fill=0)
-draw.text((0, 10), "whats poppin?", fill=0)
-draw.text((0, 20), "brand new whip just hopped in", fill=0)
-Lbuf = epd.getbuffer(Limage)
-epd.display(Lbuf)
-time.sleep(3)
-
-
+# Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+# draw = ImageDraw.Draw(Limage)
+# draw.text((0, 0), "oi cunt", fill=0)
+# draw.text((0, 10), "whats poppin?", fill=0)
+# draw.text((0, 20), "brand new whip just hopped in", fill=0)
+# Lbuf = epd.getbuffer(Limage)
+# epd.display(Lbuf)
+# time.sleep(3)
 
 
-Pimage = Image.open(os.path.join(picdir, 'panda.bmp'))
-epd.display(epd.getbuffer(Pimage))
-time.sleep(5)
 
-logging.info("4.read bmp file on window")
-Himage2 = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-bmp = Image.open(os.path.join(picdir, 'newspaper.bmp'))
-Himage2.paste(bmp, (50,10))
-epd.display(epd.getbuffer(Himage2))
-time.sleep(10)
+
+# Pimage = Image.open(os.path.join(picdir, 'panda.bmp'))
+# epd.display(epd.getbuffer(Pimage))
+# time.sleep(5)
+
+# logging.info("4.read bmp file on window")
+# Himage2 = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+# bmp = Image.open(os.path.join(picdir, 'newspaper.bmp'))
+# Himage2.paste(bmp, (50,10))
+# epd.display(epd.getbuffer(Himage2))
+# time.sleep(10)
 
 epd.sleep()
