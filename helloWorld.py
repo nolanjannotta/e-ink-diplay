@@ -56,7 +56,8 @@ draw = ImageDraw.Draw(Himage)
 
 draw.rectangle((0, 0, 478, 200), outline = 0, width=2)
 draw.text((10, 20), monthDate, fill = 0, font=monthFont)
-draw.text((10, 120), day, fill = 0, font=dayFont)
+
+draw.text((10, 110), day, fill = 0, font=dayFont)
 
 
 draw.rectangle((0, 202, 238, 300), outline = 0, width=2)
