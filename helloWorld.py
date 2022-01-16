@@ -25,7 +25,7 @@ epd.Clear()
 # epd.display(Hbuf)
 
 # Set display in deep sleep
-time.sleep(3)
+# time.sleep(3)
 #Vertical image
 
 logging.info("1.Drawing on the Horizontal image...")
@@ -35,7 +35,7 @@ draw = ImageDraw.Draw(Himage)
 # draw.text((10, 20), '7.5inch e-Paper', fill = 0)
 # draw.line((20, 50, 70, 100), fill = 0)
 # draw.line((70, 50, 20, 100), fill = 0)
-draw.rectangle((0, 0, epd.height, 200), outline = 0, width=2)
+draw.rectangle((0, 0, 800, 200), outline = 0, width=2)
 # draw.line((165, 50, 165, 100), fill = 0)
 # draw.line((140, 75, 190, 75), fill = 0)
 # draw.arc((140, 50, 190, 100), 0, 360, fill = 0)
