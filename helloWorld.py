@@ -58,7 +58,7 @@ def draw():
 
     # draw clock
     draw.rectangle((0, 302, 478, 520), outline = 0, width=2)
-    draw.text((10, 320), time, fill = 0, font=timeFont)
+    draw.text((10, 340), time, fill = 0, font=timeFont)
     
     epd.display(epd.getbuffer(Himage))
     # time.sleep(2)
