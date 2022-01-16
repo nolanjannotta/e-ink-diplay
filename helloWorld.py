@@ -1,6 +1,7 @@
 from PIL import Image,ImageDraw,ImageFont
 from datetime import date, datetime
 import time
+import schedule
 import epd7in5_V2
 import logging
 import os
@@ -18,9 +19,11 @@ timeFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size
 sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=27)
 epd = epd7in5_V2.EPD()
 def draw():
+    
 
     raw_time = datetime.now().time()
     time = raw_time.strftime("%I:%M %p")
+
     currentWeather = weather.Weather()
 
     today = date.today()
@@ -59,7 +62,9 @@ def draw():
     # draw clock
     draw.rectangle((0, 302, 478, 520), outline = 0, width=2)
     draw.text((10, 340), time, fill = 0, font=timeFont)
-    
+
+
+    epd.Clear()
     epd.display(epd.getbuffer(Himage))
     # time.sleep(2)
 
@@ -92,13 +97,19 @@ def main():
     
     epd.init()
 
+    schedule.every(1).minutes.do(draw)
+
     # clear the screen
 
     while True:
-        draw()
-        time.sleep(60)
-        epd.init()  
-        epd.Clear()
+        schedule.run_pending()
+        time.sleep(1)
+        
+        # schedule.every(1).minutes.do(func)
+        # draw()
+        # time.sleep(60)
+        # epd.init()  
+        # epd.Clear()
 
 
         
