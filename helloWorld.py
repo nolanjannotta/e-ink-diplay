@@ -44,6 +44,9 @@ day = today.strftime('%A')
 
 temp = f"{currentWeather.temp()} °F"
 
+sunset = f"Sunset: {currentWeather.sunset()}"
+sunrise = f"Sunrise: {currentWeather.sunrise()}"
+
 
 
 monthFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=75)
@@ -69,8 +72,8 @@ draw.text((10, 248), currentWeather.description(), fill = 0, font=conditionFont)
 
 draw.rectangle((240, 202, 478, 300), outline = 0, width=2)
 
-draw.text((250, 248), currentWeather.sunrise(), fill = 0, font=conditionFont)
-draw.text((250, 205), currentWeather.sunset(), fill = 0, font=conditionFont)
+draw.text((250, 248), sunrise, fill = 0, font=conditionFont)
+draw.text((250, 205), sunset, fill = 0, font=conditionFont)
 
 
 epd.display(epd.getbuffer(Himage))
