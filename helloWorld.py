@@ -55,7 +55,7 @@ def draw():
     draw.text((250, 211), sunrise, fill = 0, font=sunFont)
     draw.text((250, 252), sunset, fill = 0, font=sunFont)
 
-    draw.rectangle((0, 302, 478, 300), outline = 0, width=2)
+    draw.rectangle((0, 302, 478, 600), outline = 0, width=2)
 
     #draw.text((250, 252), time, fill = 0, font=sunFont)
     
