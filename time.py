@@ -7,18 +7,21 @@ class Timer:
     def now(self):
         return int(time.time())
     def nextavailable(self):
-        return int(time.time()) + 60
+        return self.timer + 60
+
     def checkUpdate(self):
-        if(self.timer >= self.nextavailable()):
+        if(self.now >= self.nextavailable()):
             self.timer = self.now()
             return True
-
+        pass
         
 
 timer = Timer()
 
 def func():
-    time.sleep(2)
+    print(timer.timer)
+    print(timer.nextavailable())
+    print(timer.now())
     print("hello")
 
 def main():
