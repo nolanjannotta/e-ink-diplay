@@ -1,5 +1,5 @@
 from PIL import Image,ImageDraw,ImageFont
-from datetime import date
+from datetime import date, datetime
 import time
 import epd7in5_V2
 import logging
