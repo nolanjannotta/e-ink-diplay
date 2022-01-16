@@ -1,9 +1,12 @@
 from PIL import Image, ImageDraw, ImageFilter
+from datetime import date
 import time
 import epd7in5_V2
 import logging
 import os
 picdir = "/home/pi/eInk/e-ink-display/pic"
+
+
 epd = epd7in5_V2.EPD()
 epd.init()
 
@@ -27,6 +30,8 @@ epd.Clear()
 # Set display in deep sleep
 # time.sleep(3)
 #Vertical image
+today = date.today()
+date = today.strftime("%B %d, %Y")
 
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
@@ -36,6 +41,7 @@ draw = ImageDraw.Draw(Himage)
 # draw.line((20, 50, 70, 100), fill = 0)
 # draw.line((70, 50, 20, 100), fill = 0)
 draw.rectangle((0, 0, 478, 200), outline = 0, width=2)
+draw.text((10, 100), date, fill = 0)
 # draw.line((165, 50, 165, 100), fill = 0)
 # draw.line((140, 75, 190, 75), fill = 0)
 # draw.arc((140, 50, 190, 100), 0, 360, fill = 0)
