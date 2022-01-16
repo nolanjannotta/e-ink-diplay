@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageFont, ImageDraw
 from datetime import date
 import time
 import epd7in5_V2
