@@ -13,7 +13,7 @@ monthFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),si
 dayFont = ImageFont.truetype(os.path.join(fontdir, 'OstrichSans-Black.ttf'),size=70)
 weatherFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=40)
 conditionFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=30)
-timeFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=90)
+timeFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=110)
 
 sunFont = ImageFont.truetype(os.path.join(fontdir, 'OpenSans-Regular.ttf'),size=27)
 epd = epd7in5_V2.EPD()
