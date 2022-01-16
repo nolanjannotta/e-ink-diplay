@@ -24,21 +24,21 @@ def main():
     epd.Clear()
 
 
-    # Horizontal image
-    # Himage = Image.new('1', (epd7in5_V2.EPD_WIDTH, epd7in5_V2.EPD_HEIGHT), 255)
-    # draw = ImageDraw.Draw(Himage)
-    # draw.text((0, 0), "hello world", fill=0)
-    # draw.text((0, 10), "whats poppin?", fill=0)
-    # draw.text((0, 20), "brand new whip just hopped in", fill=0)
+    Horizontal image
+    Himage = Image.new('1', (epd7in5_V2.EPD_WIDTH, epd7in5_V2.EPD_HEIGHT), 255)
+    draw = ImageDraw.Draw(Himage)
+    draw.text((0, 0), "hello world", fill=0)
+    draw.text((0, 10), "whats poppin?", fill=0)
+    draw.text((0, 20), "brand new whip just hopped in", fill=0)
 
-    # Hbuf = epd.getbuffer(Himage)
+    Hbuf = epd.getbuffer(Himage)
 
 
-    # # Display buffer
-    # epd.display(Hbuf)
+    # Display buffer
+    epd.display(Hbuf)
 
-    # Set display in deep sleep
-    # time.sleep(3)
+    Set display in deep sleep
+    time.sleep(3)
     #Vertical image
 
     currentWeather = weather.Weather()
