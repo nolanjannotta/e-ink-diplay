@@ -44,26 +44,21 @@ temp = f"{currentWeather.temp()} °F"
 
 
 
-monthFont = ImageFont.truetype(os.path.join(fontdir, 'LinLibertine-Bold.ttf'),size=75)
-dayFont = ImageFont.truetype(os.path.join(fontdir, 'YanoneKaffeesatz-Regular.ttf'),size=60)
+monthFont = ImageFont.truetype(os.path.join(fontdir, 'LinLibertine-Bold.ttf'),size=65)
+dayFont = ImageFont.truetype(os.path.join(fontdir, 'LinLibertine-Regular.ttf'),size=60)
 weatherFont = ImageFont.truetype(os.path.join(fontdir, 'LinLibertine-Regular.ttf'),size=40)
 
 
 logging.info("1.Drawing on the Horizontal image...")
 Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
-# font = draw.getfont()
-# print(font.size)
-# draw.text((10, 0), 'hello world', fill = 0)
-# draw.text((10, 20), '7.5inch e-Paper', fill = 0)
-# draw.line((20, 50, 70, 100), fill = 0)
-# draw.line((70, 50, 20, 100), fill = 0)
+
+
 draw.rectangle((0, 0, 478, 200), outline = 0, width=2)
-draw.text((10, 40), monthDate, fill = 0, font=monthFont)
+draw.text((10, 20), monthDate, fill = 0, font=monthFont)
 draw.text((10, 120), day, fill = 0, font=dayFont)
-# draw.line((165, 50, 165, 100), fill = 0)
-# draw.line((140, 75, 190, 75), fill = 0)
-# draw.arc((140, 50, 190, 100), 0, 360, fill = 0)
+
+
 draw.rectangle((0, 202, 238, 300), outline = 0, width=2)
 
 draw.text((10, 215), temp, fill = 0, font=weatherFont)
