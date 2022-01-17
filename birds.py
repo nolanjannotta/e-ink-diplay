@@ -1,5 +1,6 @@
 from os import listdir
 from os.path import isfile, join
+import random
 
 
 
@@ -12,7 +13,9 @@ class Bird:
         pass
     def getAllPics(self):
         return  [f for f in listdir(self.picdir) if isfile(join(self.picdir, f))]
+    def random_bird(self):
+        return f"bird{random.randrange(1,5,1)}"
 
 bird = Bird()
 
-print (bird.getAllPics())
+print (bird.random_bird())

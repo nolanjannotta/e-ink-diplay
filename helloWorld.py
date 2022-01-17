@@ -1,6 +1,7 @@
 from PIL import Image,ImageDraw,ImageFont
 from datetime import date, datetime
 import time
+import random
 import schedule
 import epd7in5_V2
 import logging
@@ -50,7 +51,7 @@ def draw():
     sunset = f"Sunset: {currentWeather.sunset()}"
     sunrise = f"Sunrise: {currentWeather.sunrise()}"
 
-
+    random_bird = f"bird{random.randrange(1,5,1)}"
 
 
     logging.info("1.Drawing on the Horizontal image...")
@@ -79,7 +80,7 @@ def draw():
     draw.text((10, 340), time, fill = 0, font=timeFont)
 
     draw.rectangle((0, 522, 478, 799), outline = 0, width=2)
-    bird = Image.open(os.path.join(picdir, 'bird1.bmp'))
+    bird = Image.open(os.path.join(picdir, random_bird))
     Himage.paste(bird,(0,522))
     # epd.display(epd.getbuffer(bird))
 
