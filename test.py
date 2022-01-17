@@ -7,7 +7,7 @@ import time
 def hello():
     print("hello")
 
-schedule.every(.02).minutes.do(hello)
+schedule.every(1).minutes.do(hello)
 
 while True:
     schedule.run_pending()
