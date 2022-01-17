@@ -51,7 +51,7 @@ def draw():
     sunset = f"Sunset: {currentWeather.sunset()}"
     sunrise = f"Sunrise: {currentWeather.sunrise()}"
 
-    random_bird = f"bird{random.randrange(1,16,1)}.bmp"
+    random_bird = f"bird{random.randrange(1,22,1)}.bmp"
 
 
     logging.info("1.Drawing on the Horizontal image...")
