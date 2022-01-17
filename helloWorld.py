@@ -79,7 +79,8 @@ def draw():
     draw.text((10, 340), time, fill = 0, font=timeFont)
 
     draw.rectangle((0, 522, 478, 799), outline = 0, width=2)
-    # bird = Image.open(os.path.join(picdir, 'panda.bmp'))
+    bird = Image.open(os.path.join(picdir, 'bird1.bmp'))
+    Himage.paste(bird,(0,522))
     # epd.display(epd.getbuffer(bird))
 
 
