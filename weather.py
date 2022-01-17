@@ -37,7 +37,3 @@ class Weather:
 
 
 
-weather = Weather()
-
-print(weather.forecast())
-
