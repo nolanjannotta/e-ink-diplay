@@ -81,7 +81,8 @@ def draw():
 
     draw.rectangle((0, 522, 478, 799), outline = 0, width=2)
     bird = Image.open(os.path.join(picdir, random_bird))
-    Himage.paste(bird,(2,524))
+    Himage.paste(bird,(0,522))
+    draw.rectangle((0, 522, 478, 799), outline = 0, width=2)
     # epd.display(epd.getbuffer(bird))
 
 
