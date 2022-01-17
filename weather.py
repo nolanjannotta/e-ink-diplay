@@ -9,12 +9,12 @@ import os
 
 class Weather:
     def __init__(self):
-        api_key = os.environ.get('WEATHER_API') 
+        api_key = '5aeb479d2c3bfd72033c1254fd6d352d'
    
         owm = OWM(api_key)
-        mgr = owm.weather_manager()
+        self.mgr = owm.weather_manager()
 
-        observation = mgr.weather_at_place('Los Angeles')
+        observation = self.mgr.weather_at_place('Los Angeles')
         self.weather = observation.weather
 
     # forecast = mgr.forecast_at_place('Milan,IT', 'daily')
@@ -32,10 +32,12 @@ class Weather:
         d = date_time.strftime("%I:%M %p")
         return d
     def forecast(self):
-        # forecast = mgr.forecast_at_place('Milan,IT', 'daily')
-        pass
+        forecast = self.mgr.forecast_at_place('Los Angeles, CA', 'daily')
+        return forecast
 
 
 
+weather = Weather()
 
+print(weather.forecast())
 
